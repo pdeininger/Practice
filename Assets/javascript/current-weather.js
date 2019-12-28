@@ -32,5 +32,6 @@ function currentWeather() {
     );
     currentWeatherDiv.append(currentHeading);
     currentWeatherDiv.append(weatherIcon);
+    //This is where you would add temperature, humidity, wind speed & uv index
   });
 }

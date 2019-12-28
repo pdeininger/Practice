@@ -22,6 +22,7 @@ searchButton.on("click", function() {
   searchHistoryDiv.prepend(newButton);
   //city entered by user is used for API calls
   currentWeather(city);
+  forecastWeather(city);
 });
 
 //create a function that takes search history from local storage and creates search history buttons as soon as the page loads

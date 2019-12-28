@@ -7,3 +7,14 @@
 .display-inline {
   display: inline;
 }
+.flex-div {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: lightblue;
+}
+.daily-div {
+  background-color: blue;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+}
