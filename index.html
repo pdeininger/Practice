@@ -27,6 +27,7 @@
     <header>
       <div class="jumbotron jumbotron-fluid">
         <div class="container-fluid text-center">
+          <!--Page Title-->
           <h1>Weather Dashboard</h1>
         </div>
       </div>
@@ -35,6 +36,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-4">
+            <!--Search Menu-->
             <h3>Search for a City</h3>
             <input type="text" name="city" id="Search-input" />
             <button id="search-button">Go</button>
@@ -42,11 +44,12 @@
           </div>
           <div class="col-md-8">
             <div class="row grey-border">
-              <div class="col"><p>current weather goes here</p></div>
+              <!--current weather-->
+              <div class="col"><div id="current-weather-div"></div></div>
             </div>
-
+            <!--five day forecast-->
             <div class="row">
-              <div class="col"><p>forecast goes here</p></div>
+              <div class="col"><div id="five-day-forecast-div"></div></div>
             </div>
           </div>
         </div>

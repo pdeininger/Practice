@@ -4,3 +4,6 @@
 .search-history-button {
   width: 100%;
 }
+.display-inline {
+  display: inline;
+}

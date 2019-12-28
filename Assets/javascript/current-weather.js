@@ -1,3 +1,6 @@
+//declare global variables
+var currentWeatherDiv = $("#current-weather-div");
+
 //when the user clicks the search button...
 //we will call the weather API
 function currentWeather() {
@@ -14,7 +17,20 @@ function currentWeather() {
     }
   }).then(function(response) {
     //we will take the results of the API
-    console.log(response);
+
     //From the results, we will populate city, date, icon, temperature, humidity, wind speed and UV Index
+    //city and the date
+    var currentHeading = $("<h2>");
+    currentHeading.text(
+      response.name + " (" + moment.unix(response.dt).format("MM/DD/YYYY") + ")"
+    );
+    currentHeading.addClass("display-inline");
+    var weatherIcon = $(
+      '<img src="http://openweathermap.org/img/wn/' +
+        response.weather[0].icon +
+        '@2x.png">'
+    );
+    currentWeatherDiv.append(currentHeading);
+    currentWeatherDiv.append(weatherIcon);
   });
 }
