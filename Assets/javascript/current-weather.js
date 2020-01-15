@@ -33,5 +33,19 @@ function currentWeather() {
     currentWeatherDiv.append(currentHeading);
     currentWeatherDiv.append(weatherIcon);
     //This is where you would add temperature, humidity, wind speed & uv index
+    cityAndDateEl.text(response.name + " (" + date + ")");
+    cityAndDateEl.append(
+      $(
+        '<img src="https://openweathermap.org/img/wn/' +
+          response.weather[0].icon +
+          '.png">'
+      )
+    );
+    currentTempEl.text("Temperature: " + response.main.temp.toFixed(0) + "°F");
+    currentHumidityEl.text("Humidity: " + response.main.humidity + "%");
+    currentWindEl.text(
+      "Wind Speed: " + response.wind.speed.toFixed(1) + " MPH"
+    );
+
   });
 }
