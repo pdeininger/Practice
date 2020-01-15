@@ -30,6 +30,9 @@ function historyButtons() {
   //get our array from local storage
   searchHistoryArray = JSON.parse(localStorage.getItem("searchHistory"));
   console.log(searchHistoryArray);
+  if (searchHistoryArray.length === null || searchHistoryArray.length < 1) {
+    return;
+  }
   //for loop to create buttons from the array
   for (var i = searchHistoryArray.length - 1; i >= 0; i--) {
     console.log("inside the for loop");
