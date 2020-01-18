@@ -17,6 +17,8 @@ function currentWeather() {
     }
   }).then(function(response) {
     //we will take the results of the API
+console.log(response)
+console.log(response.wind.speed)
 
     //From the results, we will populate city, date, icon, temperature, humidity, wind speed and UV Index
     //city and the date
@@ -30,8 +32,20 @@ function currentWeather() {
         response.weather[0].icon +
         '@2x.png">'
     );
+    var currentTemp = $("<p>");
+    currentTemp.text("Temperature: " + response.main.temp.toFixed(0) + "°F");
+
+    var currentHumidity = $("<p>");
+    currentHumidity.text("Humidity: " + response.main.humidity + "%");
+
+    var currentWind = $("<p>");
+    currentWind.text("Wind Speed: " + response.wind.speed.toFixed(1) + " MPH");
+    
     currentWeatherDiv.append(currentHeading);
     currentWeatherDiv.append(weatherIcon);
+    currentWeatherDiv.append(currentTemp);
+    currentWeatherDiv.append(currentHumidity);
+    currentWeatherDiv.append(currentWind);
     //This is where you would add temperature, humidity, wind speed & uv index
     cityAndDateEl.text(response.name + " (" + date + ")");
     cityAndDateEl.append(
@@ -44,7 +58,7 @@ function currentWeather() {
     currentTempEl.text("Temperature: " + response.main.temp.toFixed(0) + "°F");
     currentHumidityEl.text("Humidity: " + response.main.humidity + "%");
     currentWindEl.text(
-      "Wind Speed: " + response.wind.speed.toFixed(1) + " MPH"
+    "Wind Speed: " + response.wind.speed.toFixed(1) + " MPH"
     );
 
   });
