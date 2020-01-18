@@ -30,6 +30,7 @@ function historyButtons() {
   //get our array from local storage
   searchHistoryArray = JSON.parse(localStorage.getItem("searchHistory"));
   console.log(searchHistoryArray);
+  //need to have the default return reflecting if there is no storage so if there is, only then will it try to pull anything
   if (searchHistoryArray.length === null || searchHistoryArray.length < 1) {
     return;
   }
